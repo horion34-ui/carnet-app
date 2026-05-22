@@ -1,0 +1,20 @@
+{
+  "name": "Carnet UB",
+  "short_name": "Carnet",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#e0e0e0",
+  "theme_color": "#1565C0",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/192px-User_icon_2.svg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/512px-User_icon_2.svg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
