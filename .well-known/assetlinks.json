@@ -1,1 +1,9 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.horion34_ui.twa",
+        "sha256_cert_fingerprints": ["92:32:5D:35:F7:48:A9:15:10:DC:CC:A4:FB:F5:9C:50:5C:EA:B3:01:9F:B7:A9:39:5F:A3:3D:3C:4A:19:D2:CF"]
+      }
+    }]
 
