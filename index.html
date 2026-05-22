@@ -39,7 +39,7 @@
     .nav-h{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:.5px solid #e0e0e0; height: 50px;}
     .nav-title{font-size:17px;font-weight:500;color:#000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55%;text-align:center;}
     .nbtn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;border-radius:6px; width: 24px;}
-    .ub-logo{height: 22px; width: auto; object-fit: contain;}
+    .ub-logo{height: 28px; width: 28px; object-fit: contain;}
 
     /* Banner */
     .banner{background:#1565c0;padding:13px 0;text-align:center;}
@@ -49,11 +49,11 @@
     .content{background:#f2f2f2;padding:10px 10px 0;flex:1;}
     .card{background:#fff;border-radius:10px;margin-bottom:10px;}
 
-    /* --- FOTO DE PERFIL LIMPIA --- */
+    /* --- FOTO DE PERFIL AJUSTADA A LA ORIGINAL --- */
     .profile-container {
-      width: 105px;
-      height: 105px;
-      margin: 20px auto 10px;
+      width: 145px;
+      height: 145px;
+      margin: 25px auto 15px;
     }
     .profile-img {
       width: 100%;
@@ -61,6 +61,8 @@
       border-radius: 50%;
       object-fit: cover;
       background-color: #e0e0e0;
+      border: 5px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     /* Reloj */
@@ -124,211 +126,10 @@
       </svg>
     </button>
     <span class="nav-title" id="navtitle">Universitat de B...</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Universitat_de_Barcelona_logo.svg" alt="UB" class="ub-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Universitat_de_Barcelona_logo.svg/512px-Universitat_de_Barcelona_logo.svg.png" alt="UB" class="ub-logo">
   </div>
 
   <div class="banner"><span>ENRIQUE PÉREZ POVO</span></div>
 
   <div id="pg-home" class="page active">
     <div class="content">
-
-      <div class="profile-container">
-        <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
-      </div>
-
-      <div class="card time-card">
-        <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="14" stroke="#222" stroke-width="2"/>
-          <line id="hm" x1="16" y1="16" x2="16" y2="5" stroke="#222" stroke-width="2" stroke-linecap="round"/>
-          <line id="hh" x1="16" y1="16" x2="22" y2="16" stroke="#222" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="16" cy="16" r="1.5" fill="#222"/>
-        </svg>
-        <span class="time-txt" id="lt">--/--/---- --:--:--</span>
-      </div>
-      <div class="card info-card">
-        <div class="irow"><span class="ilabel">Código de barras</span><span class="ival">3847291056</span></div>
-        <div class="irow"><span class="ilabel">Colectivo</span><span class="ival">Estudiante (cad. 10-2026)</span></div>
-        <div class="irow"><span class="ilabel">Número de carnet</span><span class="ival">1998 3847 2910 5628</span></div>
-      </div>
-      <div class="card bc-card" id="bc-card" onclick="toggleBc()">
-        <div id="bc-small">
-          <svg width="200" height="56" viewBox="0 0 210 60">
-            <rect width="210" height="60" fill="white"/>
-            <rect x="4" y="2" width="2" height="56" fill="#000"/><rect x="8" y="2" width="1" height="56" fill="#000"/>
-            <rect x="11" y="2" width="3" height="56" fill="#000"/><rect x="16" y="2" width="1" height="56" fill="#000"/>
-            <rect x="19" y="2" width="2" height="56" fill="#000"/><rect x="23" y="2" width="1" height="56" fill="#000"/>
-            <rect x="26" y="2" width="3" height="56" fill="#000"/><rect x="31" y="2" width="2" height="56" fill="#000"/>
-            <rect x="35" y="2" width="1" height="56" fill="#000"/><rect x="38" y="2" width="4" height="56" fill="#000"/>
-            <rect x="44" y="2" width="1" height="56" fill="#000"/><rect x="47" y="2" width="2" height="56" fill="#000"/>
-            <rect x="51" y="2" width="1" height="56" fill="#000"/><rect x="54" y="2" width="3" height="56" fill="#000"/>
-            <rect x="59" y="2" width="1" height="56" fill="#000"/><rect x="62" y="2" width="2" height="56" fill="#000"/>
-            <rect x="66" y="2" width="4" height="56" fill="#000"/><rect x="72" y="2" width="1" height="56" fill="#000"/>
-            <rect x="75" y="2" width="2" height="56" fill="#000"/><rect x="79" y="2" width="1" height="56" fill="#000"/>
-            <rect x="82" y="2" width="3" height="56" fill="#000"/><rect x="87" y="2" width="1" height="56" fill="#000"/>
-            <rect x="90" y="2" width="2" height="56" fill="#000"/><rect x="94" y="2" width="1" height="56" fill="#000"/>
-            <rect x="97" y="2" width="4" height="56" fill="#000"/><rect x="103" y="2" width="1" height="56" fill="#000"/>
-            <rect x="106" y="2" width="2" height="56" fill="#000"/><rect x="110" y="2" width="3" height="56" fill="#000"/>
-            <rect x="115" y="2" width="1" height="56" fill="#000"/><rect x="118" y="2" width="2" height="56" fill="#000"/>
-            <rect x="122" y="2" width="1" height="56" fill="#000"/><rect x="125" y="2" width="3" height="56" fill="#000"/>
-            <rect x="130" y="2" width="2" height="56" fill="#000"/><rect x="134" y="2" width="1" height="56" fill="#000"/>
-            <rect x="137" y="2" width="4" height="56" fill="#000"/><rect x="143" y="2" width="1" height="56" fill="#000"/>
-            <rect x="146" y="2" width="2" height="56" fill="#000"/><rect x="150" y="2" width="1" height="56" fill="#000"/>
-            <rect x="153" y="2" width="3" height="56" fill="#000"/><rect x="158" y="2" width="1" height="56" fill="#000"/>
-            <rect x="161" y="2" width="2" height="56" fill="#000"/><rect x="165" y="2" width="4" height="56" fill="#000"/>
-            <rect x="171" y="2" width="1" height="56" fill="#000"/><rect x="174" y="2" width="2" height="56" fill="#000"/>
-            <rect x="178" y="2" width="1" height="56" fill="#000"/><rect x="181" y="2" width="3" height="56" fill="#000"/>
-            <rect x="186" y="2" width="1" height="56" fill="#000"/><rect x="189" y="2" width="2" height="56" fill="#000"/>
-            <rect x="193" y="2" width="1" height="56" fill="#000"/><rect x="196" y="2" width="4" height="56" fill="#000"/>
-            <rect x="202" y="2" width="1" height="56" fill="#000"/><rect x="205" y="2" width="3" height="56" fill="#000"/>
-          </svg>
-        </div>
-        <div id="bc-big" style="display:none;">
-          <svg width="340" height="110" viewBox="0 0 340 110">
-            <rect width="340" height="110" fill="white"/>
-            <rect x="5" y="3" width="3.5" height="104" fill="#000"/><rect x="11" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="15" y="3" width="5" height="104" fill="#000"/><rect x="23" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="27" y="3" width="3.5" height="104" fill="#000"/><rect x="33" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="37" y="3" width="5" height="104" fill="#000"/><rect x="45" y="3" width="3" height="104" fill="#000"/>
-            <rect x="51" y="3" width="1.5" height="104" fill="#000"/><rect x="55" y="3" width="6.5" height="104" fill="#000"/>
-            <rect x="64" y="3" width="1.5" height="104" fill="#000"/><rect x="68" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="74" y="3" width="1.5" height="104" fill="#000"/><rect x="78" y="3" width="5" height="104" fill="#000"/>
-            <rect x="86" y="3" width="1.5" height="104" fill="#000"/><rect x="90" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="96" y="3" width="6.5" height="104" fill="#000"/><rect x="105" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="109" y="3" width="3.5" height="104" fill="#000"/><rect x="115" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="119" y="3" width="5" height="104" fill="#000"/><rect x="127" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="131" y="3" width="3.5" height="104" fill="#000"/><rect x="137" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="141" y="3" width="6.5" height="104" fill="#000"/><rect x="150" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="154" y="3" width="3.5" height="104" fill="#000"/><rect x="160" y="3" width="5" height="104" fill="#000"/>
-            <rect x="168" y="3" width="1.5" height="104" fill="#000"/><rect x="172" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="178" y="3" width="1.5" height="104" fill="#000"/><rect x="182" y="3" width="5" height="104" fill="#000"/>
-            <rect x="190" y="3" width="3" height="104" fill="#000"/><rect x="196" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="200" y="3" width="6.5" height="104" fill="#000"/><rect x="209" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="213" y="3" width="3.5" height="104" fill="#000"/><rect x="219" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="223" y="3" width="5" height="104" fill="#000"/><rect x="231" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="235" y="3" width="3.5" height="104" fill="#000"/><rect x="241" y="3" width="6.5" height="104" fill="#000"/>
-            <rect x="250" y="3" width="1.5" height="104" fill="#000"/><rect x="254" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="260" y="3" width="1.5" height="104" fill="#000"/><rect x="264" y="3" width="5" height="104" fill="#000"/>
-            <rect x="272" y="3" width="1.5" height="104" fill="#000"/><rect x="276" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="282" y="3" width="1.5" height="104" fill="#000"/><rect x="286" y="3" width="6.5" height="104" fill="#000"/>
-            <rect x="295" y="3" width="1.5" height="104" fill="#000"/><rect x="299" y="3" width="3.5" height="104" fill="#000"/>
-            <rect x="305" y="3" width="5" height="104" fill="#000"/><rect x="313" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="317" y="3" width="3.5" height="104" fill="#000"/><rect x="323" y="3" width="1.5" height="104" fill="#000"/>
-            <rect x="327" y="3" width="5" height="104" fill="#000"/>
-            <rect x="335" y="3" width="3" height="104" fill="#000"/>
-          </svg>
-        </div>
-        <span class="bc-hint" id="bc-hint-txt">Clica para ampliar</span>
-      </div>
-    </div>
-  </div>
-
-  <div id="pg-cal" class="page">
-    <div class="content"><div class="card"><div class="cal-month" style="padding:12px 14px 4px; font-weight:700; font-size:15px; color:#000;">Mayo 2026</div><div class="cal-grid" id="calgrid"></div></div></div>
-  </div>
-
-  <div id="pg-notif" class="page">
-    <div class="content"><div class="card"><div class="notif-item"><div class="notif-dot"></div><div><div class="notif-txt">Matrícula abierta.</div></div></div></div></div>
-  </div>
-
-  <div id="pg-search" class="page">
-    <div class="content"><div class="card" style="padding:10px;"><div class="search-box"><input type="text" placeholder="Buscar..."/></div></div></div>
-  </div>
-
-  <div id="pg-cfg" class="page">
-    <div class="content"><div class="card"><div class="cfg-row"><span class="cfg-label">Modo oscuro</span><button class="toggle" id="t3" onclick="tog('t3')"></button></div></div></div>
-  </div>
-
-  <div class="bnav">
-    <button class="ni on" id="nb-home" onclick="nav('home')">
-      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      <span class="lbl">Inicio</span>
-    </button>
-    <button class="ni" id="nb-cfg" onclick="nav('cfg')">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      <span class="lbl">Configuración</span>
-    </button>
-    <button class="ni" id="nb-cal" onclick="nav('cal')">
-      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span class="lbl">Calendario</span>
-    </button>
-    <button class="ni" id="nb-notif" onclick="nav('notif')">
-      <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-      <span class="lbl">Alertas</span>
-    </button>
-    <button class="ni" id="nb-search" onclick="nav('search')">
-      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span class="lbl">Buscar</span>
-    </button>
-  </div>
-
-</div>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js');
-    });
-  }
-
-  var curPage='home', bcExpanded=false;
-  var navTitles={home:'Universitat de B...',cfg:'Configuración',cal:'Calendario',notif:'Alertas',search:'Buscar'};
-
-  function nav(p){
-    document.querySelectorAll('.page').forEach(function(el){el.classList.remove('active');});
-    document.getElementById('pg-'+p).classList.add('active');
-    document.querySelectorAll('.ni').forEach(function(el){el.classList.remove('on');});
-    document.getElementById('nb-'+p).classList.add('on');
-    document.getElementById('navtitle').textContent=navTitles[p];
-    curPage=p;
-    if(p==='cal') buildCal();
-  }
-
-  function goBack(){nav('home');}
-
-  function toggleBc(){
-    bcExpanded=!bcExpanded;
-    document.getElementById('bc-small').style.display=bcExpanded?'none':'block';
-    document.getElementById('bc-big').style.display=bcExpanded?'block':'none';
-    document.getElementById('bc-hint-txt').textContent=bcExpanded?'Clica para reducir':'Clica para ampliar';
-  }
-
-  function pad(n){return String(n).padStart(2,'0');}
-  
-  function tick(){
-    var now=new Date();
-    var d=now.getDate(),mo=now.getMonth()+1,y=now.getFullYear();
-    var h=now.getHours(),m=now.getMinutes(),s=now.getSeconds();
-    var el=document.getElementById('lt');
-    if(el) el.textContent=d+'-'+mo+'-'+y+' '+pad(h)+':'+pad(m)+':'+pad(s);
-    
-    var mA=(m/60)*360+(s/60)*6;
-    var hA=(h%12/12)*360+(m/60)*30;
-    var cx=16,cy=16,mR=(mA-90)*Math.PI/180,hR=(hA-90)*Math.PI/180;
-    var mx=cx+10*Math.cos(mR),my=cy+10*Math.sin(mR);
-    var hx=cx+7*Math.cos(hR),hy=cy+7*Math.sin(hR);
-    var hm2=document.getElementById('hm'),hh2=document.getElementById('hh');
-    if(hm2){hm2.setAttribute('x2',mx.toFixed(2));hm2.setAttribute('y2',my.toFixed(2));}
-    if(hh2){hh2.setAttribute('x2',hx.toFixed(2));hh2.setAttribute('y2',hy.toFixed(2));}
-  }
-  tick();setInterval(tick,1000);
-
-  function buildCal(){
-    var g=document.getElementById('calgrid');
-    if(!g||g.children.length>0)return;
-    var days=['L','M','X','J','V','S','D'];
-    days.forEach(function(d){var el=document.createElement('div');el.className='cal-day hd';el.textContent=d;g.appendChild(el);});
-    for(var i=0;i<4;i++){var el=document.createElement('div');el.className='cal-day';g.appendChild(el);}
-    for(var d2=1;d2<=31;d2++){
-      var el=document.createElement('div');
-      el.className='cal-day'+(d2===22?' today':'');
-      el.textContent=d2;
-      g.appendChild(el);
-    }
-  }
-
-  function tog(id){
-    document.getElementById(id).classList.toggle('on');
-  }
-</script>
-</body>
-</html>
