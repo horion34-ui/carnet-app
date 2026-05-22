@@ -8,50 +8,43 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#ffffff">
   <title>Carnet UB</title>
-
   <link rel="manifest" href="manifest.json">
-
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html,body{font-family:'Roboto','Noto Sans',sans-serif;background:#fff;width:100%;height:100%;overflow:hidden;}
     .phone{background:#f2f2f2;width:100%;height:100vh;display:flex;flex-direction:column;overflow:hidden;}
 
-    /* Nav header */
     .nav-h{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:.5px solid #e0e0e0;height:50px;flex-shrink:0;}
     .nav-title{font-size:17px;font-weight:500;color:#000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55%;text-align:center;}
     .nbtn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;border-radius:6px;width:24px;}
-    .ub-logo{height:22px;width:auto;object-fit:contain;}
+    .ub-logo-nav{height:22px;width:auto;}
 
-    /* Banner */
     .banner{background:#1565c0;padding:10px 0;text-align:center;flex-shrink:0;}
     .banner span{color:#fff;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 
-    /* Content */
     .content{background:#f2f2f2;padding:8px 10px 0;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:8px;}
     .card{background:#fff;border-radius:10px;}
 
-    /* Foto de perfil con escudo */
+    /* Foto de perfil - sin borde, igual que Clara */
     .profile-wrapper{display:flex;justify-content:center;align-items:flex-start;position:relative;padding-top:12px;}
-    .profile-container{width:105px;height:105px;position:relative;}
-    .profile-img{width:100%;height:100%;border-radius:50%;object-fit:cover;background-color:#e0e0e0;border:3px solid #fff;box-shadow:0 0 0 1px #e0e0e0;}
-    .ub-escudo{position:absolute;right:-60px;top:12px;height:50px;width:auto;}
+    .profile-container{width:120px;height:120px;position:relative;}
+    .profile-img{width:100%;height:100%;border-radius:50%;object-fit:cover;background-color:#e0e0e0;}
 
-    /* Reloj */
+    /* Escudo UB inline a la derecha de la foto */
+    .ub-escudo-wrap{position:absolute;right:calc(50% - 120px);top:16px;}
+
     .time-card{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 18px;}
     .time-txt{font-size:15px;color:#000;}
 
-    /* Info rows */
     .info-card{padding:0 14px;}
     .irow{display:flex;align-items:flex-start;padding:10px 0;border-bottom:.5px solid #e8e8e8;}
     .irow:last-child{border-bottom:none;}
     .ilabel{font-size:14px;font-weight:700;color:#000;width:150px;flex-shrink:0;}
     .ival{font-size:14px;color:#000;flex:1;}
 
-    /* Codigo de barras */
     .bc-card{padding:12px 0 10px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;}
     .bc-hint{font-size:12px;color:#666;margin-top:2px;}
 
-    /* Barra inferior */
     .bnav{background:#fff;border-top:.5px solid #e0e0e0;display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom));flex-shrink:0;}
     .ni{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;cursor:pointer;padding:3px 0;border:none;background:none;border-radius:8px;}
     .ni svg{width:24px;height:24px;stroke:#757575;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
@@ -59,26 +52,21 @@
     .ni.on svg{stroke:#1565c0;}
     .ni.on .lbl{color:#1565c0;font-weight:600;}
 
-    /* Paginas */
     .page{display:none;}
     .page.active{display:flex;flex-direction:column;flex:1;overflow:hidden;}
 
-    /* Calendario */
     .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:8px;}
     .cal-day{text-align:center;font-size:12px;padding:5px 2px;border-radius:6px;color:#000;cursor:pointer;}
     .cal-day.hd{font-weight:700;color:#888;cursor:default;}
     .cal-day.today{background:#1565c0;color:#fff;font-weight:700;}
 
-    /* Notificaciones */
     .notif-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-bottom:.5px solid #eee;}
     .notif-dot{width:8px;height:8px;border-radius:50%;background:#1565c0;flex-shrink:0;margin-top:4px;}
     .notif-txt{font-size:13px;color:#000;line-height:1.4;}
 
-    /* Buscar */
     .search-box{padding:10px 14px;}
     .search-box input{width:100%;padding:9px 12px;border:.5px solid #ccc;border-radius:8px;font-size:14px;outline:none;background:#f8f8f8;}
 
-    /* Configuracion */
     .cfg-row{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:.5px solid #eee;cursor:pointer;}
     .cfg-label{font-size:14px;color:#000;}
     .toggle{width:40px;height:22px;background:#ccc;border-radius:11px;position:relative;border:none;cursor:pointer;}
@@ -88,7 +76,6 @@
   </style>
 </head>
 <body>
-
 <div class="phone">
 
   <div class="nav-h">
@@ -98,7 +85,10 @@
       </svg>
     </button>
     <span class="nav-title" id="navtitle">Universitat de B...</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Universitat_de_Barcelona_logo.svg" alt="UB" class="ub-logo">
+    <!-- Logo UB inline SVG en navbar -->
+    <svg class="ub-logo-nav" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="42" font-family="Georgia,serif" font-size="48" font-weight="bold" fill="#1565c0">UB</text>
+    </svg>
   </div>
 
   <div class="banner"><span>ENRIQUE PÉREZ POVO</span></div>
@@ -112,7 +102,44 @@
         <div class="profile-container">
           <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
         </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Coat_of_arms_of_the_University_of_Barcelona.svg/200px-Coat_of_arms_of_the_University_of_Barcelona.svg.png" alt="Escudo UB" class="ub-escudo">
+        <!-- Escudo UB inline a la derecha de la foto, igual posición que Clara -->
+        <div class="ub-escudo-wrap">
+          <svg width="52" height="60" viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
+            <!-- Escudo simplificado UB -->
+            <defs>
+              <clipPath id="shield">
+                <path d="M100,5 L190,40 L190,140 Q190,200 100,225 Q10,200 10,140 L10,40 Z"/>
+              </clipPath>
+            </defs>
+            <!-- Fondo escudo -->
+            <path d="M100,5 L190,40 L190,140 Q190,200 100,225 Q10,200 10,140 L10,40 Z" fill="#fff" stroke="#c8a84b" stroke-width="4"/>
+            <!-- Cuartel superior izquierdo: rojo con barras doradas (Corona Aragón) -->
+            <rect x="10" y="40" width="90" height="95" clip-path="url(#shield)" fill="#c0392b"/>
+            <rect x="10" y="50" width="90" height="10" clip-path="url(#shield)" fill="#c8a84b"/>
+            <rect x="10" y="72" width="90" height="10" clip-path="url(#shield)" fill="#c8a84b"/>
+            <rect x="10" y="94" width="90" height="10" clip-path="url(#shield)" fill="#c8a84b"/>
+            <rect x="10" y="116" width="90" height="10" clip-path="url(#shield)" fill="#c8a84b"/>
+            <!-- Cuartel superior derecho: azul con cruz roja (Barcelona) -->
+            <rect x="100" y="40" width="90" height="95" clip-path="url(#shield)" fill="#2471a3"/>
+            <rect x="135" y="40" width="20" height="95" clip-path="url(#shield)" fill="#c0392b"/>
+            <rect x="100" y="80" width="90" height="20" clip-path="url(#shield)" fill="#c0392b"/>
+            <!-- Cuartel inferior: azul oscuro UB con texto -->
+            <path d="M10,135 L10,140 Q10,200 100,225 Q190,200 190,140 L190,135 Z" fill="#1a3a6b"/>
+            <!-- Texto UB -->
+            <text x="100" y="195" font-family="Georgia,serif" font-size="38" font-weight="bold" fill="#c8a84b" text-anchor="middle">UB</text>
+            <!-- Borde exterior dorado -->
+            <path d="M100,5 L190,40 L190,140 Q190,200 100,225 Q10,200 10,140 L10,40 Z" fill="none" stroke="#c8a84b" stroke-width="5"/>
+            <!-- Línea divisoria horizontal -->
+            <line x1="10" y1="135" x2="190" y2="135" stroke="#c8a84b" stroke-width="3"/>
+            <!-- Línea divisoria vertical -->
+            <line x1="100" y1="40" x2="100" y2="135" stroke="#c8a84b" stroke-width="3"/>
+            <!-- Corona superior -->
+            <ellipse cx="100" cy="8" rx="30" ry="8" fill="#c8a84b"/>
+            <rect x="75" y="2" width="8" height="14" rx="2" fill="#c8a84b"/>
+            <rect x="96" y="0" width="8" height="16" rx="2" fill="#c8a84b"/>
+            <rect x="117" y="2" width="8" height="14" rx="2" fill="#c8a84b"/>
+          </svg>
+        </div>
       </div>
 
       <!-- Reloj -->
@@ -211,7 +238,7 @@
   <div id="pg-cal" class="page">
     <div class="content">
       <div class="card">
-        <div class="cal-month" style="padding:12px 14px 4px;font-weight:700;font-size:15px;color:#000;">Mayo 2026</div>
+        <div style="padding:12px 14px 4px;font-weight:700;font-size:15px;color:#000;">Mayo 2026</div>
         <div class="cal-grid" id="calgrid"></div>
       </div>
     </div>
