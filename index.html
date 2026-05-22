@@ -12,7 +12,7 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html,body{font-family:'Roboto','Noto Sans',sans-serif;background:#fff;width:100%;height:100%;overflow:hidden;}
-    .phone{background:#f2f2f2;width:100%;height:100vh;display:flex;flex-direction:column;overflow:hidden;}
+    .phone{background:#f2f2f2;width:100%;height:100vh;display:flex;flex-direction:column;overflow:hidden;position:relative;}
 
     .nav-h{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:.5px solid #e0e0e0;height:50px;flex-shrink:0;}
     .nav-title{font-size:17px;font-weight:500;color:#000;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%;text-align:center;}
@@ -21,46 +21,37 @@
     .banner{background:#1565c0;padding:10px 0;text-align:center;flex-shrink:0;}
     .banner span{color:#fff;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 
-    .content{background:#f2f2f2;padding:8px 10px 0;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:8px;}
+    .content{background:#f2f2f2;padding:8px 10px 70px;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:8px;}
     .card{background:#fff;border-radius:10px;}
 
-    /* Foto y escudo — igual que Clara */
+    /* Foto y escudo — clavado igual que Clara */
     .profile-wrapper{
       display:flex;
       justify-content:center;
-      align-items:flex-start;
+      align-items:center;
       position:relative;
-      padding-top:16px;
-      padding-bottom:8px;
-    }
-    /* Contenedor centrado foto + escudo juntos como en Clara */
-    .profile-inner{
-      display:flex;
-      align-items:flex-start;
-      gap:20px;
+      padding:16px 0 8px;
     }
     .profile-container{
-      width:160px;
-      height:160px;
+      width:170px;
+      height:170px;
       position:relative;
-      flex-shrink:0;
     }
     .profile-img{
-      width:100%;
-      height:100%;
+      width:170px;
+      height:170px;
       border-radius:50%;
       object-fit:cover;
-      object-position:center;
-      /* Elimina fondo blanco — el navegador recorta solo */
-      background:transparent;
+      object-position:center top;
       display:block;
     }
-    /* Escudo alineado igual que Clara: arriba a la derecha de la foto */
+    /* Escudo: posición absoluta a la derecha de la foto, igual que Clara */
     .ub-escudo{
-      height:65px;
+      position:absolute;
+      left:calc(50% + 85px + 10px);
+      top:16px;
+      height:60px;
       width:auto;
-      margin-top:4px;
-      flex-shrink:0;
     }
 
     .time-card{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 18px;}
@@ -75,14 +66,18 @@
     .bc-card{padding:12px 0 10px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;}
     .bc-hint{font-size:12px;color:#666;margin-top:2px;}
 
-    /* BARRA NAV INFERIOR — igual que Clara */
+    /* BARRA NAV INFERIOR — fija en la parte inferior, siempre visible */
     .bnav{
       background:#fff;
       border-top:.5px solid #e0e0e0;
       display:flex;
       justify-content:space-around;
       padding:8px 0 calc(8px + env(safe-area-inset-bottom));
-      flex-shrink:0;
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      z-index:100;
     }
     .ni{
       display:flex;
@@ -161,14 +156,12 @@
   <div id="pg-home" class="page active">
     <div class="content">
 
-      <!-- Foto + Escudo UB — mismo layout que Clara -->
+      <!-- Foto + Escudo UB — clavado igual que Clara -->
       <div class="profile-wrapper">
-        <div class="profile-inner">
-          <div class="profile-container">
-            <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
-          </div>
-          <img src="escudo-ub.png" alt="Escudo UB" class="ub-escudo">
+        <div class="profile-container">
+          <img src="foto-perfil.jpg" alt="Foto de perfil" class="profile-img">
         </div>
+        <img src="escudo-ub.png" alt="Escudo UB" class="ub-escudo">
       </div>
 
       <!-- Reloj -->
@@ -351,9 +344,13 @@
 </div>
 
 <script>
+  // Elimina todos los Service Workers y cachés antiguos para evitar versiones cacheadas
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js');
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for (var r of registrations) { r.unregister(); }
+    });
+    caches.keys().then(function(keys) {
+      keys.forEach(function(k) { caches.delete(k); });
     });
   }
 
