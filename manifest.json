@@ -1,18 +1,19 @@
 {
   "name": "SocUB",
   "short_name": "SocUB",
-  "start_url": "/",
+  "start_url": "/carnet-app/index.html",
+  "scope": "/carnet-app/",
   "display": "standalone",
   "background_color": "#e0e0e0",
   "theme_color": "#1565C0",
   "icons": [
     {
-      "src": "/src/launchericon-192x192.png",
+      "src": "src/launchericon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/src/launchericon-512x512.png",
+      "src": "src/launchericon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
